@@ -190,7 +190,7 @@ int fullstopcounter2=0;
 
 }
 
-
+// ellie is a little bitch
 
 int char_counter(char search_char, char input_sentence[]){
   int counter=0;
