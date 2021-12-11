@@ -24,28 +24,37 @@ char sentence2[100];
 //creating an integer which will store the length of sentence 2 as B  
   int B= strlen(sentence2);
 //then prints out the number associated with each sentence
+  int tiny;
+  int big;
   printf("The number of characters including spaces in sentence 1 is %d\n\n", A);
   printf("The number of characters including spaces in sentence 2 is %d\n\n", B);
 
 // Second statistic output which sentence is longer
 
 //creating an if statement so that a different line of code runs depending on the outcome of each line
-  if (A>B)
+  if (A>B){
 //if A which has been assigned a number in line 21 is bigger than B which is assiged a number in line 23 then the sentence below is printed 
+tiny= B;
+big=A;
     printf("Sentence 1 is bigger than Sentence \n\n");
+  }
 //If this is not meet then the code runs the next line which is exucuted if A=B
-      else if (A==B)
+      else if (A==B){
       printf("The sentences are the same length\n\n");
+      }
 //When these last two conditions are met then B must be longer than A so the next sentence is printed
-        else
+        else{
         printf("Sentence 2 is longer than Sentence 1\n\n");
+tiny= A;
+big=B;
+        }
         
 // Thirs statistic output counting the number of words in a sentence
 //create an int to store when there is a space. It starts at 1 as there won't be a space at the start of the sentence
   int spacecounter=1;
 // when the for loop is meet the it moves on.
   for(int i=0; i<A; i++) {
-//printf("\n %c",sentence1[i]); This line of code was just so I could see if it was working
+//printf("\n %c",sentence1[i]); //This line of code was just so I could see if it was working
     if (sentence1[i]== ' '){
 // the ' ' tells the code that it is looking for the spaces
       spacecounter++;
@@ -179,18 +188,32 @@ int fullstopcounter2=0;
     printf("\n%c%d", vowels_array[i],char_counter
     (vowels_array[i], sentence1));
     vowel_amount += char_counter(vowels_array[i], sentence1);
-
-
   }
-    printf("\nthere are %d many vowels", vowel_amount);
+    printf("\nthere are %d vowels", vowel_amount);
+ 
+ for(int i=0; i<tiny; i++) {
+printf("\n %c",sentence1[i]);
+printf("\n %c",sentence2[i]);
 
+
+ }
+if (A>B){ 
+  for(int i=tiny; i<big; i++ ){
+    printf("\n%c",sentence1[i]);
+  }
+  }
+else {
+  for(int i=tiny; i<big; i++){
+    printf("\n%c",sentence2[i]);
+  }
+}
   return 0; 
 
 
 
 }
 
-// ellie is a little bitch
+
 
 int char_counter(char search_char, char input_sentence[]){
   int counter=0;
